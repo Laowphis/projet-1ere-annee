@@ -7,6 +7,8 @@ import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 
+import javax.swing.table.DefaultTableModel;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -20,8 +22,8 @@ import javax.imageio.IIOException;
 
 public class Plateautest  extends JFrame {
  
-	File noir_img = new File("/image/noir.jpg");
-	File blanc_img = new File("/image/blanc.jpg");
+	File noir_img = new File("noir.jpg");
+	File blanc_img = new File("blanc.jpg");
 	BufferedImage noir;
 	BufferedImage blanc;
 	private Object[][] plateau= {
@@ -46,22 +48,34 @@ public class Plateautest  extends JFrame {
 		this.setSize(800,800);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.setContentPane(new PanneauPlateau());
 		
-		echequier = new JTable(plateau, title);
-		scroll= new JScrollPane(echequier); 
+		
+		DefaultTableModel echec = new DefaultTableModel(plateau, title);
+		JTable echequier = new JTable(echec);
+		//echequier.setOpaque(false);
+		
+		
+		JScrollPane scroll= new JScrollPane(echequier);
+		//scroll.setOpaque(false);
+		
+		
+		//JTable.setDefaultRenderer();
+		
 		
 		this.getContentPane().add(scroll);
+		
+		
+		
 		this.setVisible(true);
 		
 	}
 	 
 	public static void main(String[] args) 
 	{
-		
 		try {
 			Plateautest main = new Plateautest();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

@@ -5,8 +5,11 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+
 import java.io.File;
+
 import javax.imageio.ImageIO;
+
 import java.awt.Image;
 import java.awt.image.BufferedImage; 
 
@@ -40,7 +43,7 @@ public class Plateau00  extends JFrame {
 		this.setSize(800,800);
 		this.setLocationRelativeTo(null);
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		
+		this.setContentPane(new PanneauPlateau());
 		echequier = new JTable(plateau, title);
 		scroll= new JScrollPane(echequier); 
 		
