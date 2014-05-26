@@ -17,3 +17,4 @@ public abstract class Piece  extends JButton{
 	
 	
 }
+

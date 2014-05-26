@@ -13,6 +13,8 @@ public class Cavalier extends Piece{
 		
 	}
 
+	//ColorsWhite = True for Plateau02.b1 && Plateau02.b2;
+	
 	@Override
 	public Icon getIcon() {
 		// TODO Auto-generated method stub
@@ -34,6 +36,9 @@ public class Cavalier extends Piece{
 
 	@Override
 	public Color getBackground() {
+		
+		
+	//	setBackground(img);
 		return null;
 		// TODO Auto-generated method stub
 		
